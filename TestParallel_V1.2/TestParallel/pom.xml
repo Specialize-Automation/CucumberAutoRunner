@@ -87,20 +87,18 @@
 	 
 	 
 	 <build>
-    <pluginManagement>
       <plugins>
-        <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-compiler-plugin</artifactId>
-          <version>3.8.0</version>
-          <configuration>
-           <fork>true</fork>
-           <executable>C:\Program Files\Java\jdk1.8.0_121\bin\javac.exe</executable>
-           <source>1.8</source>
-           <target>1.8</target>
-          </configuration>
-        </plugin>
-        
+         <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-compiler-plugin</artifactId>
+        <version>3.8.0</version>
+        <configuration>
+            <fork>true</fork>
+      		<executable>C:\Program Files\Java\jdk1.8.0_66\bin\javac.exe</executable>
+        	<source>1.8</source>
+        	<target>1.8</target>
+        </configuration>
+   		</plugin>        
         <plugin>
     <groupId>org.apache.maven.plugins</groupId>
     <artifactId>maven-surefire-plugin</artifactId>
@@ -120,7 +118,7 @@
 <version>2.20</version>
 </plugin>
 <!-- Maven Html reporting -->
-<plugin>
+			<plugin>
                 <groupId>net.masterthought</groupId>
                 <artifactId>maven-cucumber-reporting</artifactId>
                 <version>3.16.0</version>
@@ -141,9 +139,7 @@
                           </configuration>
                     </execution>
                 </executions>
-            </plugin>
-		
-
+			</plugin>
      <plugin>
     <groupId>com.github.temyers</groupId>
     <artifactId>cucumber-jvm-parallel-plugin</artifactId>
@@ -169,26 +165,20 @@
                 	<outputDirectory>${project.build.directory}/cucumber-parallel/json/</outputDirectory>
                 	</plugin>
                 	</plugins>
-                	<strict>true</strict>
-                	<monochrome>true</monochrome>
-                
+                <strict>true</strict>
+                <monochrome>true</monochrome>
                 <tags>
                 	<tag>@google</tag>
                 	<tag>@bing</tag>
                 </tags>
-                
                 <useTestNG>false</useTestNG>
-       <namingScheme>simple</namingScheme>
-       <namingPattern>Parallel{c}IT</namingPattern>
-        <parallelScheme>SCENARIO</parallelScheme>
+       			<namingScheme>simple</namingScheme>
+       			<namingPattern>Parallel{c}IT</namingPattern>
+        		<parallelScheme>FEATURE</parallelScheme>
             </configuration>
         </execution>
     </executions>
 </plugin>
-
-
-
-      </plugins>
-    </pluginManagement>
-  </build>
+</plugins>
+</build>
 </project>
